@@ -8,39 +8,44 @@ namespace Metro
 {
     class Branch
     {
-        private string _name;
+        private string _nameBranch;
         private string _color;
-        private int _number;
+        private int _numberBranch;
         private string[] _stations;
+        private int _timeStation;
 
         public Branch(string name, string color, int number, string[] stations)
         {
-            _name = name;
+            
+            _nameBranch = name;
             _color = color;
-            _number = number;
+            _numberBranch = number;
             _stations = stations;
+            _timeStation = 1;
         }
-
-        public string GetName()
+       
+        public string GetNameBranch()
         {
-            return _name;
+            return _nameBranch;
         }
-
         public string GetColor()
         {
             return _color;
         }
-
-        public int GetNumber()
+        public int GetNumberBranch()
         {
-            return _number;
+            return _numberBranch;
         }
-
         public string[] GetStations()
         {
             return _stations;
         }
-    }
+        public int GetTimeStations()
+        {
+            return _timeStation;
+        }
 
-    
+       
+
+    }
 }

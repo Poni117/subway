@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metro", "Metro\Metro.csproj", "{868B5EB7-BC74-4B9E-A859-41353EC935B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metro", "Metro\Metro.csproj", "{BF70306F-1C8C-4EC0-8093-B879F7842C2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{868B5EB7-BC74-4B9E-A859-41353EC935B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{868B5EB7-BC74-4B9E-A859-41353EC935B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{868B5EB7-BC74-4B9E-A859-41353EC935B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{868B5EB7-BC74-4B9E-A859-41353EC935B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF70306F-1C8C-4EC0-8093-B879F7842C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF70306F-1C8C-4EC0-8093-B879F7842C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF70306F-1C8C-4EC0-8093-B879F7842C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF70306F-1C8C-4EC0-8093-B879F7842C2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {585BFBF8-42FC-476A-967C-0E7072C65186}
+		SolutionGuid = {6891788A-82D9-468B-809A-D338DBA849E4}
 	EndGlobalSection
 EndGlobal
