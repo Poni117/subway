@@ -43,10 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Branch.cs" />
-    <Compile Include="..\..\GitHub\subway\Metro\Program.cs">
-      <Link>Program.cs</Link>
-    </Compile>
     <Compile Include="BranchesList.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Metro
 {
-    class Branch
+    public class Branch
     {
         private string _nameBranch;
         private string _color;
