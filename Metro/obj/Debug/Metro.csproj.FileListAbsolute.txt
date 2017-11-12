@@ -1,7 +1,0 @@
-F:\Дима\Java\Program Test\Metro\Metro\bin\Debug\Metro.exe.config
-F:\Дима\Java\Program Test\Metro\Metro\bin\Debug\Metro.exe
-F:\Дима\Java\Program Test\Metro\Metro\bin\Debug\Metro.pdb
-F:\Дима\Java\Program Test\Metro\Metro\obj\Debug\Metro.csprojResolveAssemblyReference.cache
-F:\Дима\Java\Program Test\Metro\Metro\obj\Debug\Metro.csproj.CoreCompileInputs.cache
-F:\Дима\Java\Program Test\Metro\Metro\obj\Debug\Metro.exe
-F:\Дима\Java\Program Test\Metro\Metro\obj\Debug\Metro.pdb
