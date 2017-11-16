@@ -104,61 +104,9 @@ namespace Metro
             });
         }
 
-        private void InputBranches(Branch branch)
+        public Branch FindBranch(string stationIdentifier)
         {
-
-            Console.WriteLine("Введите станцию отправки. ");
-            string startStation = Console.ReadLine();
-
-            Console.WriteLine("Введите станцию остановки. ");
-            string endStation = Console.ReadLine();
-
-            int timeWay = 0;
-            
-            
-            for (int i = 0; i < branch.GetStations().Length; i++)
-            {
-                string[] arrayNames = branch.GetStations();
-                if (startStation == arrayNames[i])
-                {
-                    for (int b = 0; b < arrayNames.Length; b++)
-                    {
-                        if (endStation == arrayNames[b])
-                        {
-                            for (int a = i; endStation != arrayNames[a] && a < branch.GetStations().Length; a++)
-                            {
-                                timeWay = timeWay + branch.GetTimeStations();
-                            }
-                            Console.WriteLine("Время пути состовляет - " + timeWay + " мин");
-                            return;
-                        }
-                    }
-                }
-            }
-
-            Console.WriteLine("нет одной или несколько станции в этой ветке. ЧИТАЙ СПИСОК ВНИМАТЕЛЬНЕЕ!!!");
-        }
-
-        public void GetBranchInfo(Branch branch)
-        {
-            int _totalTime = 0;
-            Console.WriteLine("Назавние направления - " + branch.GetNameBranch());
-            Console.WriteLine("Цвет линни - " + branch.GetColor());
-            Console.WriteLine("Номер линии - " + branch.GetNumberBranch());
-            Console.WriteLine("Список станций - ");
-            for (int i = 0; i < branch.GetStations().Length; i++)
-            {
-                Console.WriteLine(branch.GetStations()[i]);
-                _totalTime = _totalTime + branch.GetTimeStations();
-            }
-            Console.WriteLine("Время всего пути - " + _totalTime + " мин");
-        }
-
-
-
-        public Branch FindBranch(string userAnswer)
-        {
-            switch (userAnswer)
+            switch (stationIdentifier)
             {
                 case "Кировско-Выборгская":
                 case "Красный":
@@ -198,6 +146,58 @@ namespace Metro
             }
 
             return null;
+        }
+
+        public int CalculateTotalTime(Branch branch)
+        {
+            int _totalTime = 0;
+            for (int i = 0; i < branch.GetStations().Length; i++)
+            {
+                _totalTime = _totalTime + branch.GetTimeStations();
+            }
+            return _totalTime;
+        }
+
+        public int CalculateTripTime(Branch branch, string startStation, string endStation)
+        {
+            int tripTime = 0;
+
+            bool isStartStationExist = false;
+            bool isEndStationExist = false;
+            string[] arrayNames = branch.GetStations();
+            int i = 0;
+            int b = 0;
+            for (; i < arrayNames.Length; i++)
+            {
+                if (startStation == arrayNames[i])
+                {
+                    isStartStationExist = true;
+                    break;
+                }
+            }
+            if (isStartStationExist != true )
+            {
+                return -1;
+            }
+
+            for (b = i; b < arrayNames.Length; b++)
+            {
+                if (endStation == arrayNames[b])
+                {
+                    isEndStationExist = true;
+                    break;
+                }
+            }
+            if (isEndStationExist != true)
+            {
+                return -1;
+            }
+
+            for (int a = i; a < b; a++)
+            {
+                tripTime = tripTime + branch.GetTimeStations();
+            }
+            return tripTime;
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Metro
     {
         static void Main(string[] args)
         {
+           
             BranchesList branchesList = new BranchesList();
 
             Console.WriteLine("Для получения иформации введите направление,цвет или номер ветки.");
@@ -20,9 +21,8 @@ namespace Metro
             Branch branch = branchesList.FindBranch(userAnswer);
             // TODO: Validate branch
 
-            branchesList.GetBranchInfo(branch);
-
-
+            GetBranchInfo(branch, branchesList);
+            InputBranches(branch, branchesList);
             /*
              * 1. запросить номер ветки
              * 2. сформировать инфо ветки - обращение к BranchesList
@@ -34,5 +34,39 @@ namespace Metro
              * 
              */
         }
+
+        public static void GetBranchInfo(Branch branch, BranchesList branchesList)
+        {
+            Console.WriteLine("Назавние направления - " + branch.GetNameBranch());
+            Console.WriteLine("Цвет линни - " + branch.GetColor());
+            Console.WriteLine("Номер линии - " + branch.GetNumberBranch());
+            Console.WriteLine("Список станций - ");
+
+            for(int i = 0; i < branch.GetStations().Length;i++)
+            {
+                Console.WriteLine("\t" + branch.GetStations()[i]);
+            }
+            Console.WriteLine("Время всего пути - " + branchesList.CalculateTotalTime(branch) + " мин");
+        }
+
+        private static void InputBranches(Branch branch, BranchesList branchesList)
+        {
+            Console.WriteLine("Введите станцию отправки. ");
+            string startStation = Console.ReadLine();
+
+            Console.WriteLine("Введите станцию остановки. ");
+            string endStation = Console.ReadLine();
+
+            int tripTime = branchesList.CalculateTripTime(branch, startStation, endStation);
+            if (tripTime != -1)
+            {
+                Console.WriteLine("Время пути состовляет - " + tripTime + " мин");
+            }
+            else
+            {
+                Console.WriteLine("нет одной или несколько станции в этой ветке. ЧИТАЙ СПИСОК ВНИМАТЕЛЬНЕЕ!!!");
+            }
+        }
+
     }
 }
