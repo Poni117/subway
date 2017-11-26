@@ -37,9 +37,9 @@ namespace Metro
 
         public static void GetBranchInfo(Branch branch, BranchesList branchesList)
         {
-            Console.WriteLine("Назавние направления - " + branch.GetNameBranch());
+            Console.WriteLine("Назавние направления - " + branch.GetName());
             Console.WriteLine("Цвет линни - " + branch.GetColor());
-            Console.WriteLine("Номер линии - " + branch.GetNumberBranch());
+            Console.WriteLine("Номер линии - " + branch.GetNumber());
             Console.WriteLine("Список станций - ");
 
             for(int i = 0; i < branch.GetStations().Length;i++)

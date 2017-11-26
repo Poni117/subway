@@ -8,32 +8,32 @@ namespace Metro
 {
     public class Branch
     {
-        private string _nameBranch;
+        private string _name;
         private string _color;
-        private int _numberBranch;
+        private int _number;
         private string[] _stations;
         private int _timeStation;
 
         public Branch(string name, string color, int number, string[] stations)
         {
-            _nameBranch = name;
+            _name = name;
             _color = color;
-            _numberBranch = number;
+            _number = number;
             _stations = stations;
             _timeStation = 1;
         }
        
-        public string GetNameBranch()
+        public string GetName()
         {
-            return _nameBranch;
+            return _name;
         }
         public string GetColor()
         {
             return _color;
         }
-        public int GetNumberBranch()
+        public int GetNumber()
         {
-            return _numberBranch;
+            return _number;
         }
         public string[] GetStations()
         {
@@ -60,12 +60,11 @@ namespace Metro
 
             bool isStartStationExist = false;
             bool isEndStationExist = false;
-            string[] arrayNames = GetStations();
             int i = 0;
             int b = 0;
-            for (; i < arrayNames.Length; i++)
+            for (; i < _stations.Length; i++)
             {
-                if (startStation == arrayNames[i])
+                if (startStation == _stations[i])
                 {
                     isStartStationExist = true;
                     break;
@@ -76,9 +75,9 @@ namespace Metro
                 return -1;
             }
 
-            for (b = i; b < arrayNames.Length; b++)
+            for (b = i; b < _stations.Length; b++)
             {
-                if (endStation == arrayNames[b])
+                if (endStation == _stations[b])
                 {
                     isEndStationExist = true;
                     break;
