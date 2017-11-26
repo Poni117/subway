@@ -46,7 +46,7 @@ namespace Metro
             {
                 Console.WriteLine("\t" + branch.GetStations()[i]);
             }
-            Console.WriteLine("Время всего пути - " + branchesList.CalculateTotalTime(branch) + " мин");
+            Console.WriteLine("Время всего пути - " + branch.CalculateTotalTime() + " мин");
         }
 
         private static void InputBranches(Branch branch, BranchesList branchesList)
@@ -57,7 +57,7 @@ namespace Metro
             Console.WriteLine("Введите станцию остановки. ");
             string endStation = Console.ReadLine();
 
-            int tripTime = branchesList.CalculateTripTime(branch, startStation, endStation);
+            int tripTime = branch.CalculateTripTime(startStation, endStation);
             if (tripTime != -1)
             {
                 Console.WriteLine("Время пути состовляет - " + tripTime + " мин");

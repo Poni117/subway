@@ -134,71 +134,21 @@ namespace Metro
                 case "Оранжевый":
                 case "4":
                 {
-                    return _branch3;
+                    return _branch4;
                 }
 
                 case "Фрунзенско-Приморская":
                 case "Фиолетовый":
                 case "5":
                 {
-                    return _branch3;
+                    return _branch5;
                 }
             }
 
             return null;
         }
 
-        public int CalculateTotalTime(Branch branch)
-        {
-            int _totalTime = 0;
-            for (int i = 0; i < branch.GetStations().Length; i++)
-            {
-                _totalTime = _totalTime + branch.GetTimeStations();
-            }
-            return _totalTime;
-        }
 
-        public int CalculateTripTime(Branch branch, string startStation, string endStation)
-        {
-            int tripTime = 0;
-
-            bool isStartStationExist = false;
-            bool isEndStationExist = false;
-            string[] arrayNames = branch.GetStations();
-            int i = 0;
-            int b = 0;
-            for (; i < arrayNames.Length; i++)
-            {
-                if (startStation == arrayNames[i])
-                {
-                    isStartStationExist = true;
-                    break;
-                }
-            }
-            if (isStartStationExist != true )
-            {
-                return -1;
-            }
-
-            for (b = i; b < arrayNames.Length; b++)
-            {
-                if (endStation == arrayNames[b])
-                {
-                    isEndStationExist = true;
-                    break;
-                }
-            }
-            if (isEndStationExist != true)
-            {
-                return -1;
-            }
-
-            for (int a = i; a < b; a++)
-            {
-                tripTime = tripTime + branch.GetTimeStations();
-            }
-            return tripTime;
-        }
     }
 }
 
