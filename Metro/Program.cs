@@ -44,7 +44,7 @@ namespace Metro
 
             for(int i = 0; i < branch.GetStations().Length;i++)
             {
-                Console.WriteLine("\t" + branch.GetStations()[i]);
+                Console.WriteLine("\t" + branch.GetStations()[i] + " - " + branch.GetTimeStations()[i] + " мин");
             }
             Console.WriteLine("Время всего пути - " + branch.CalculateTotalTime() + " мин");
         }

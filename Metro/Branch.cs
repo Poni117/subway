@@ -12,15 +12,20 @@ namespace Metro
         private string _color;
         private int _number;
         private string[] _stations;
-        private int _timeStation;
+        private int[] _timeStations;
 
         public Branch(string name, string color, int number, string[] stations)
         {
+            Random random = new Random();
             _name = name;
             _color = color;
             _number = number;
             _stations = stations;
-            _timeStation = 1;
+            _timeStations = new int[stations.Length];
+            for (int i = 0; i < _timeStations.Length - 1; i++)
+            {
+                _timeStations[i] = random.Next(1, 7);
+            }
         }
        
         public string GetName()
@@ -39,9 +44,9 @@ namespace Metro
         {
             return _stations;
         }
-        public int GetTimeStations()
+        public int[] GetTimeStations()
         {
-            return _timeStation;
+            return _timeStations;
         }
 
         public int CalculateTotalTime()
@@ -49,7 +54,7 @@ namespace Metro
             int _totalTime = 0;
             for (int i = 0; i < GetStations().Length; i++)
             {
-                _totalTime = _totalTime + GetTimeStations();
+                _totalTime = _totalTime + GetTimeStations()[i];
             }
             return _totalTime;
         }
@@ -90,7 +95,7 @@ namespace Metro
 
             for (int a = i; a < b; a++)
             {
-                tripTime = tripTime + GetTimeStations();
+                tripTime = tripTime + GetTimeStations()[a];
             }
             return tripTime;
         }
